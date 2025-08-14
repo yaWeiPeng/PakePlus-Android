@@ -3,6 +3,14 @@ console.log(
     'color:orangered;font-weight:bolder'
 )
 
+
+Object.defineProperty(navigator, 'userAgent', {
+  get: () => 'anok-pda',
+  configurable: false  // 防止被二次修改
+});
+
+console.log(navigator.userAgent)
+
 // very important, if you don't know what it is, don't touch it
 // 非常重要，不懂代码不要动，这里可以解决80%的问题，也可以生产1000+的bug
 const hookClick = (e) => {
